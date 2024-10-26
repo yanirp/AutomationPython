@@ -1,0 +1,236 @@
+[
+  {
+    "companyName": "מי מודיעין - תאגיד מים",
+    "companyId": 13,
+    "PayerNumber": "812000",
+    "StubNumber": "240103586"
+  },
+  {
+    "companyName": "מי חדרה - תאגיד מים",
+    "companyId": 15,
+    "PayerNumber": "13027123",
+    "StubNumber": "240177104"
+  },
+  {
+    "companyName": "מי נעם - תאגיד מים",
+    "companyId": 30,
+    "PayerNumber": "203958541",
+    "StubNumber": "24239524"
+  },
+  {
+    "companyName": "מי גבעתיים - תאגיד מים",
+    "companyId": 64,
+    "PayerNumber": "511911356",
+    "StubNumber": "24131143"
+  },
+  {
+    "companyName": "לוד -עירייה",
+    "companyId": 81,
+    "PayerNumber": "69630841",
+    "StubNumber": "141277699"
+  },
+  {
+    "companyName": "אורנית -  מועצה מקומית",
+    "companyId": 83,
+    "PayerNumber": "98034",
+    "StubNumber": "19584028"
+  },
+  {
+    "companyName": "קריית אונו",
+    "companyId": 1134,
+    "PayerNumber": "8900140473",
+    "StubNumber": "385627373"
+  },
+  {
+    "companyName": "מעיינות זיו - תאגיד מים",
+    "companyId": 5,
+    "PayerNumber": "66609389",
+    "StubNumber": "240101498"
+  },
+  {
+    "companyName": "עמק חפר - מועצה אזורית",
+    "companyId": 6,
+    "PayerNumber": "55062996",
+    "StubNumber": "24090395"
+  },
+  {
+    "companyName": "מטה אשר - מועצה אזורית",
+    "companyId": 23,
+    "PayerNumber": "39707567",
+    "StubNumber": "30276120"
+  },
+  {
+    "companyName": "עין נטפים - תאגיד מים",
+    "companyId": 24,
+    "PayerNumber": "25305111",
+    "StubNumber": "240127295"
+  },
+  {
+    "companyName": "מי קרית גת - תאגיד מים",
+    "companyId": 31,
+    "PayerNumber": "308064492",
+    "StubNumber": "24126557"
+  },
+  {
+    "companyName": "מעיינות הדרום - תאגיד מים",
+    "companyId": 46,
+    "PayerNumber": "514627884",
+    "StubNumber": "240214141"
+  },
+  {
+    "companyName": "מי רקת -  תאגיד מים",
+    "companyId": 65,
+    "PayerNumber": "7275",
+    "StubNumber": "240100003"
+  },
+  {
+    "companyName": "מי לוד - תאגיד מים",
+    "companyId": 21,
+    "PayerNumber": "326853033",
+    "StubNumber": "24143593"
+  },
+  {
+    "companyName": "מי רהט - תאגיד מים",
+    "companyId": 89,
+    "PayerNumber": "206450991",
+    "StubNumber": "240098091"
+  },
+  {
+    "companyName": "יהוד מונוסון ",
+    "companyId": 28,
+    "PayerNumber": "800020",
+    "StubNumber": "426843622"
+  },
+  {
+    "companyName": "מיה – תשתיות המים של הוד השרון ",
+    "companyId": 94,
+    "PayerNumber": "56037351",
+    "StubNumber": "24116447"
+  },
+  {
+    "companyName": "חוף אשקלון",
+    "companyId": 153,
+    "PayerNumber": "644047",
+    "StubNumber": "30146166"
+  },
+  {
+    "companyName": "מי יבנה - תאגיד מים",
+    "companyId": 10,
+    "PayerNumber": "B52130000",
+    "StubNumber": "240145461"
+  },
+  {
+    "companyName": "מי שבע - תאגיד מים",
+    "companyId": 12,
+    "PayerNumber": "514817006",
+    "StubNumber": "240566849"
+  },
+  {
+    "companyName": "שדרות - עירייה",
+    "companyId": 35,
+    "PayerNumber": "317937399",
+    "StubNumber": "30422318"
+  },
+  {
+    "companyName": "קרית גת - עירייה",
+    "companyId": 37,
+    "PayerNumber": "26934786",
+    "StubNumber": "897473704"
+  },
+  {
+    "companyName": "גוש עציון - מועצה אזורית",
+    "companyId": 44,
+    "PayerNumber": "53349866",
+    "StubNumber": "005137496"
+  },
+  {
+    "companyName": "מי רמת גן - תאגיד מים",
+    "companyId": 101,
+    "PayerNumber": "42157750",
+    "StubNumber": "240414662"
+  },
+  {
+    "companyName": "מי רעננה",
+    "companyId": 110,
+    "PayerNumber": "513405969",
+    "StubNumber": "24150410"
+  },
+  {
+    "companyName": "מי שיקמה",
+    "companyId": 169,
+    "PayerNumber": "55876023",
+    "StubNumber": "240418434"
+  },
+  {
+    "companyName": "מי לב השרון - תאגיד מים",
+    "companyId": 15647,
+    "PayerNumber": "88801070",
+    "StubNumber": "40047025"
+  },
+  {
+    "companyName": "יובלי העמק",
+    "companyId": 15652,
+    "PayerNumber": "514792563",
+    "StubNumber": "35007153"
+  },
+  {
+    "companyName": "בית שמש - עירייה",
+    "companyId": 29,
+    "PayerNumber": "318954351",
+    "StubNumber": "1117176740"
+  },
+  {
+    "companyName": "מי בת ים",
+    "companyId": 43,
+    "PayerNumber": "022839377",
+    "StubNumber": "240331910"
+  },
+  {
+    "companyName": "שער הנגב -מועצה אזורית",
+    "companyId": 86,
+    "PayerNumber": "520000522",
+    "StubNumber": "18195381"
+  },
+  {
+    "companyName": "מי התנור",
+    "companyId": 168,
+    "PayerNumber": "80956725",
+    "StubNumber": "240144430"
+  },
+  {
+    "companyName": "חברה כלכלית עמק חפר",
+    "companyId": 186,
+    "PayerNumber": "510016652",
+    "StubNumber": "240048844"
+  },
+  {
+    "companyName": "עיריית צפת",
+    "companyId": 15655,
+    "PayerNumber": "512306663",
+    "StubNumber": "543417022"
+  },
+  {
+    "companyName": "מעלה אדומים - עירייה",
+    "companyId": 20,
+    "PayerNumber": "59710251",
+    "StubNumber": "30237835"
+  },
+  {
+    "companyName": "עין אפק - תאגיד מים",
+    "companyId": 45,
+    "PayerNumber": "56219306",
+    "StubNumber": "240081603"
+  },
+  {
+    "companyName": "מעיינות החוף - תאגיד מים",
+    "companyId": 102,
+    "PayerNumber": "520030404",
+    "StubNumber": "240222531"
+  },
+  {
+    "companyName": "מי תקווה – תאגיד המים והביוב",
+    "companyId": 109,
+    "PayerNumber": "516308798",
+    "StubNumber": "240033779"
+  }
+]
