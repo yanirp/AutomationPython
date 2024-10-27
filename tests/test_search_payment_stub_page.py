@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page
 from models import payment_stub_details
 from models.payment_stub_details import get_payment_stub_details
+from page_objects.payment_stub_page import PaymentStubPage
 from page_objects.search_payment_stub_page import SearchPaymentStubPage
 
 
@@ -13,3 +14,4 @@ def test_search_payment_stub(page: Page,payment_stub_details):
     page.goto(payment_page_url)
 
     search_payment_stub_page.search_payment_stub(payment_stub_details['PayerNumber'], payment_stub_details['StubNumber'])
+    assert search_payment_stub_page.is_success_to_load_payment_stub()

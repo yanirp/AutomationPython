@@ -1,3 +1,5 @@
+import re
+
 from playwright.sync_api import Page
 from page_objects.base_page import BasePage
 
@@ -17,3 +19,12 @@ class SearchPaymentStubPage(BasePage):
         self.payer_number.fill(payer_number)
         self.stub_number.fill(stub_number)
         self.proceed_payment_btn.click()
+
+    def is_success_to_load_payment_stub(self) -> bool:
+        pattern = re.compile(r"PayNow")
+        iframe = self.page.locator("iframe[src*='SearchPay']").element_handle()
+        iframe_content = iframe.content_frame() if iframe else None
+        if iframe_content:
+            iframe_content.wait_for_url(pattern)
+            return self.text_success_to_load_payment_stub.is_visible()
+        return False
