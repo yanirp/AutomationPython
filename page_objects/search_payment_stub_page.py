@@ -25,6 +25,6 @@ class SearchPaymentStubPage(BasePage):
         iframe = self.page.locator("iframe[src*='SearchPay']").element_handle()
         iframe_content = iframe.content_frame() if iframe else None
         if iframe_content:
-            iframe_content.wait_for_url(pattern)
+            iframe_content.wait_for_url(pattern, timeout=3000)
             return self.text_success_to_load_payment_stub.is_visible()
         return False
