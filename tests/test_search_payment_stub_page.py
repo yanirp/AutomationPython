@@ -15,3 +15,4 @@ def test_search_payment_stub(page: Page,payment_stub_details):
 
     search_payment_stub_page.search_payment_stub(payment_stub_details['PayerNumber'], payment_stub_details['StubNumber'])
     assert search_payment_stub_page.is_success_to_load_payment_stub()
+
