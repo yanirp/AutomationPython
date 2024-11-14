@@ -1,4 +1,7 @@
-pytest
+pytest~=8.3.3
 pytest-playwright
-playwright
+playwright~=1.48.0
 pyodbc
+allure
+allure-python-commons~=2.13.5
+SQLAlchemy~=2.0.36

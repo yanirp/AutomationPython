@@ -1,38 +1,43 @@
-import pyodbc
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
+# Define the base class for the ORM
+Base = declarative_base()
 
+# Define the model for the tbl_SmsRegistration table
+class SmsRegistrationModel(Base):
+    __tablename__ = 'tbl_SmsRegistration'  # Specify the actual table name here
+
+    Id = Column(Integer, primary_key=True, autoincrement=True)
+    Phone = Column(String)
+    Code = Column(String)
+
+# Define the SmsRegistration class with ORM
 class SmsRegistration:
+    # Class variable to hold the session factory
+    engine = create_engine("mssql+pyodbc://yanirp:Yp654123&@10.1.6.165/AppDes_Pay24?driver=ODBC+Driver+17+for+SQL+Server")
+    Session = sessionmaker(bind=engine)
+
     @staticmethod
     def get_last_sms_by_phone(phone):
-        connection_string = (
-            "DRIVER={SQL Server};"
-            "SERVER=10.1.6.165;"
-            "DATABASE=AppDes_Pay24;"
-            "UID=yanirp;"
-            "PWD=Yp654123&;"
-        )
-
+        # Create a new session
+        session = SmsRegistration.Session()
         try:
-            # Connect to the database
-            with pyodbc.connect(connection_string) as connection:
-                # Adjust the query to fetch the last record based on ID
-                query = """
-                SELECT TOP 1 Code 
-                FROM tbl_SmsRegistration 
-                WHERE Phone = ? 
-                ORDER BY Id DESC
-                """
+            # Query the database using ORM
+            last_sms = (
+                session.query(SmsRegistrationModel)
+                .filter_by(Phone=phone)
+                .order_by(SmsRegistrationModel.Id.desc())
+                .first()
+            )
 
-                # Execute the query with parameterized input
-                with connection.cursor() as cursor:
-                    cursor.execute(query, (phone,))
-                    row = cursor.fetchone()
-
-                    # Check if a result is found
-                    if row:
-                        return row[0]  # Adjust based on the column index or name
-                    else:
-                        raise Exception("No SMS found")
+            if last_sms:
+                return last_sms.Code
+            else:
+                raise Exception("No SMS found")
         except Exception as e:
             print(f"Error: {e}")
             raise
+        finally:
+            session.close()
