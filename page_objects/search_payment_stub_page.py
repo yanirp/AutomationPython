@@ -1,6 +1,6 @@
 import re
 from playwright._impl._errors import TimeoutError
-from playwright.sync_api import Page, Expect
+from playwright.sync_api import Page
 from page_objects.base_page import BasePage
 
 
@@ -48,7 +48,7 @@ class SearchPaymentStubPage(BasePage):
                 # Handle specific errors if timeout occurs by checking error message text
                 error_message = self.check_errors_for_getting_to_payment_page()
                 if error_message != "No errors":
-                    print(f"Error detected: {error_message}")
+                    print(f" Error detected: {error_message}")
                 else:
                     print("Unknown timeout error occurred while waiting for iframe URL.")
                 return False
