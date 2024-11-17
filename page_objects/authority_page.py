@@ -11,6 +11,7 @@ class AuthorityPage(BasePage):
         self.login_input = page.locator("//input[@data-placeholder='מספר נייד']")
         self.otp_input = page.locator("//input[@data-placeholder='הזן כאן את הקוד']")
         self.submit_login_btn = page.locator("//button[contains(text(),'שלח')]")
+        self.show_connected_user = page.locator("//header/div[1]/div[1]/div[5]/div[2]/app-select-option-w-caret[1]/div[1]/app-select-option[1]/div[1]/div[2]")
 
     def click_standing_order_icon_btn(self):
         self.standing_order_icon_btn.click()

@@ -11,3 +11,4 @@ def test_authority_page_functions(page: Page):
     authority_page = AuthorityPage(page)
     authority_page.user_login_to_mast_with_asset(user.phone)
     time.sleep(5)
+    assert authority_page.show_connected_user.is_visible(),"The user is not connected to mast"
