@@ -7,7 +7,7 @@ Base = declarative_base()
 
 # Define the model for the tbl_SmsRegistration table
 class SmsRegistrationModel(Base):
-    __tablename__ = 'tbl_SmsRegistration'  # Specify the actual table name here
+    otp = 'tbl_SmsRegistration'  # Specify the actual table name here
 
     Id = Column(Integer, primary_key=True, autoincrement=True)
     Phone = Column(String)
