@@ -4,3 +4,4 @@ playwright~=1.48.0
 pyodbc
 allure-python-commons~=2.13.5
 SQLAlchemy~=2.0.36
+allure-pytest
