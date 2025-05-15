@@ -12,7 +12,7 @@ def page():
     config = load_config()
     base_url = config['base_url']
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True, args=["--start-maximized"])
+        browser = playwright.chromium.launch(headless=False, args=["--start-maximized"])
         context = browser.new_context(no_viewport=True)
         page = context.new_page()
         page.goto(base_url)
