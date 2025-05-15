@@ -1,38 +1,36 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                echo 'שולף את הקוד מהמאגר...'
-                git branch: 'main', url: 'https://github.com/yanirp/AutomationPython.git'
+                checkout scm
             }
         }
-
-        stage('Setup Environment') {
+        stage('Install dependencies') {
             steps {
-                echo 'מגדיר סביבה וירטואלית...'
-                bat 'python -m venv venv'
-                bat '.\\venv\\Scripts\\activate'
+                // התקנת ספריות פייתון כולל Playwright
                 bat 'pip install -r requirements.txt'
             }
         }
-
+        stage('Install Playwright Browsers') {
+            steps {
+                // התקנת הדפדפנים הדרושים ל-Playwright
+                bat 'python -m playwright install'
+            }
+        }
         stage('Run Tests') {
             steps {
-                dir('tests') {
-                    echo 'מריץ בדיקות...'
-                    bat 'pytest --maxfail=1 --disable-warnings --junitxml=report.xml'
-                }
+                // הפעלת הטסטים עם pytest (לפי ההגדרות שלך)
+                bat 'pytest tests --junitxml=tests/report.xml'
             }
         }
     }
-    
+
     post {
         always {
-            echo 'מארכב תוצאות בדיקות...'
-            archiveArtifacts artifacts: 'tests\\report.xml', allowEmptyArchive: true
-            junit 'tests\\report.xml'
+            junit 'tests/report.xml'
+            archiveArtifacts 'tests/report.xml'
         }
     }
 }
