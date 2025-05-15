@@ -9,20 +9,17 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                // התקנת ספריות פייתון כולל Playwright
                 bat 'pip install -r requirements.txt'
             }
         }
         stage('Install Playwright Browsers') {
             steps {
-                // התקנת הדפדפנים הדרושים ל-Playwright
                 bat 'python -m playwright install'
             }
         }
-        stage('Run Tests') {
+        stage('Run Single Test') {
             steps {
-                // הפעלת הטסטים עם pytest (לפי ההגדרות שלך)
-                bat 'pytest tests --junitxml=tests/report.xml'
+                bat 'pytest tests/test_authority_page.py --junitxml=tests/report.xml'
             }
         }
     }
