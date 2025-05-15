@@ -19,7 +19,8 @@ pipeline {
         }
         stage('Run Single Test') {
             steps {
-                bat 'pytest tests/test_authority_page.py --junitxml=tests/report.xml'
+                // מריצים את הבדיקות עם HEADLESS=false
+                bat 'set HEADLESS=false && pytest tests/test_authority_page.py --junitxml=tests/report.xml'
             }
         }
     }
