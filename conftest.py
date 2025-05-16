@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 
 
 def load_config():
-    with open("C:\Repos\AutomationPython\Appconfig.json") as config_file:
+    with open("C:/Repos/AutomationPython/Appconfig.json") as config_file:
         return json.load(config_file)
 
 @pytest.fixture(scope="session")
