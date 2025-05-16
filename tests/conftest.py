@@ -1,7 +1,11 @@
 import json
 import os
+from unittest.mock import patch
+
 import pytest
 from playwright.sync_api import sync_playwright
+
+from data_base.sms_registration import SmsRegistration
 
 
 def load_config():
@@ -29,3 +33,11 @@ def page():
         yield page
         context.close()
         browser.close()
+
+@pytest.fixture(autouse=True)
+def mock_db_on_ci():
+    if os.getenv("CI"):
+        with patch.object(SmsRegistration, 'get_last_sms_by_phone', return_value="123456"):
+            yield
+    else:
+        yield
