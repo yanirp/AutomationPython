@@ -26,4 +26,4 @@ jobs:
 
       - name: Run ONLY test_authority_page.py
         run: |
-          pytest path/to/test_authority_page.py --headed --slowmo 50
+          pytest tests/test_authority_page.py --headed --slowmo 50
