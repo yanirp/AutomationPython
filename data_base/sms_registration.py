@@ -1,11 +1,16 @@
 import pyodbc
-
+import platform
 
 class SmsRegistration:
     @staticmethod
     def get_last_sms_by_phone(phone):
+        if platform.system() == "Windows":
+            driver = "SQL Server"
+        else:
+            driver = "ODBC Driver 18 for SQL Server"  # או 17 אם 18 לא מותקן
+
         connection_string = (
-            "DRIVER={SQL Server};"
+            f"DRIVER={{{driver}}};"
             "SERVER=10.1.6.165;"
             "DATABASE=AppDes_Pay24;"
             "UID=yanirp;"

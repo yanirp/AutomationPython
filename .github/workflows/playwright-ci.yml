@@ -25,6 +25,17 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
-      - name: Run ONLY test_authority_page.py with xvfb
+      - name: Install MS SQL ODBC Driver (Linux)
+        run: |
+          # Add Microsoft's package repository
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          sudo apt-get update
+          # Accept EULA and install the driver
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+          # Optional: install unixodbc-dev if needed for pyodbc build
+          sudo apt-get install -y unixodbc-dev
+
+      - name: Run ONLY test_authority_page.py
         run: |
           xvfb-run pytest tests/test_authority_page.py --headed --slowmo 50
