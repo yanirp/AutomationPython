@@ -1,11 +1,21 @@
 import json
+import os
 import pytest
 from playwright.sync_api import sync_playwright
 
 
 def load_config():
-    with open("C:/Repos/AutomationPython/Appconfig.json") as config_file:
+    # מקבל את הנתיב המוחלט לתיקייה שבה נמצא conftest.py
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    # בונה נתיב ל-Appconfig.json בתיקיית האב של tests (השורש של הפרויקט)
+    config_path = os.path.join(base_path, "..", "Appconfig.json")
+
+    # להדפיס את הנתיב שמנסים לטעון, לצורך דיבאג
+    print(f"Loading config from: {os.path.abspath(config_path)}")
+
+    with open(config_path, "r", encoding="utf-8") as config_file:
         return json.load(config_file)
+
 
 @pytest.fixture(scope="session")
 def page():
@@ -19,5 +29,3 @@ def page():
         yield page
         context.close()
         browser.close()
-
-
