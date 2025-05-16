@@ -25,6 +25,6 @@ jobs:
         run: |
           python -m playwright install --with-deps
 
-      - name: Run ONLY test_authority_page.py
+      - name: Run ONLY test_authority_page.py with xvfb
         run: |
-          pytest tests/test_authority_page.py --headed --slowmo 50
+          xvfb-run pytest tests/test_authority_page.py --headed --slowmo 50
