@@ -5,8 +5,8 @@ class CreditCardModel:
         self.year = year
 
 credit_card_data = CreditCardModel(
-    card_number="5326105300985622",
-    month="12",
-    year="2025"
+    card_number="5326140282245281",
+    month="10",
+    year="2026"
 
 )
