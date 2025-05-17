@@ -40,4 +40,4 @@ jobs:
         env:
           CI: true
         run: |
-          xvfb-run pytest tests/test_authority_page.py --headed --slowmo 50
+          xvfb-run pytest tests/test_standing_order_page.py --headed --slowmo 50
