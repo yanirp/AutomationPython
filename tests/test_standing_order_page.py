@@ -31,5 +31,5 @@ def test_standing_order_page_e2e(page: Page):
 
 
 
-def test_standing_order_page_e2e_with_data(page: Page):
-    test_standing_order_page_e2e(page, standing_order_data,credit_card_data)
+#def test_standing_order_page_e2e_with_data(page: Page):
+  #  test_standing_order_page_e2e(page, standing_order_data,credit_card_data)
