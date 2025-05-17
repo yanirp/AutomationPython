@@ -27,13 +27,10 @@ jobs:
 
       - name: Install MS SQL ODBC Driver (Linux)
         run: |
-          # Add Microsoft's package repository
           curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
           curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
           sudo apt-get update
-          # Accept EULA and install the driver
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
-          # Optional: install unixodbc-dev if needed for pyodbc build
           sudo apt-get install -y unixodbc-dev
 
       - name: Install fonts
@@ -45,4 +42,18 @@ jobs:
         env:
           CI: true
         run: |
-          xvfb-run pytest tests/test_standing_order_page.py --headed --slowmo 100
+          xvfb-run pytest tests/test_standing_order_page.py --headed --slowmo 100 || true
+
+      - name: Upload debug screenshot
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ci-debug-screenshot
+          path: ci_debug_screenshot.png
+
+      - name: Upload debug HTML
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ci-debug-html
+          path: ci_debug_page.html
