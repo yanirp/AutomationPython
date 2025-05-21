@@ -1,13 +1,18 @@
 import pyodbc
 import platform
+import os
 
 class SmsRegistration:
     @staticmethod
     def get_last_sms_by_phone(phone):
+        # אם זה CI עם מספר טלפון ידוע - החזר קוד קבוע
+        if os.getenv("CI") == "true" and phone == os.getenv("CI_TEST_PHONE"):
+            return os.getenv("CI_TEST_PASSWORD")
+
         if platform.system() == "Windows":
             driver = "SQL Server"
         else:
-            driver = "ODBC Driver 18 for SQL Server"  # או 17 אם 18 לא מותקן
+            driver = "ODBC Driver 18 for SQL Server"
 
         connection_string = (
             f"DRIVER={{{driver}}};"
@@ -18,24 +23,18 @@ class SmsRegistration:
         )
 
         try:
-            # Connect to the database
             with pyodbc.connect(connection_string) as connection:
-                # Adjust the query to fetch the last record based on ID
                 query = """
                 SELECT TOP 1 Code 
                 FROM tbl_SmsRegistration 
                 WHERE Phone = ? 
                 ORDER BY Id DESC
                 """
-
-                # Execute the query with parameterized input
                 with connection.cursor() as cursor:
                     cursor.execute(query, (phone,))
                     row = cursor.fetchone()
-
-                    # Check if a result is found
                     if row:
-                        return row[0]  # Adjust based on the column index or name
+                        return row[0]
                     else:
                         raise Exception("No SMS found")
         except Exception as e:
