@@ -7,7 +7,7 @@ class AuthorityPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
         self.standing_order_icon_btn = page.locator("//div[contains(text(),'הצטרפות להוראת קבע באשראי')]")
-        self.login_btn = page.locator("//button[contains(text(),'התחברות')]")
+        self.login_btn = page.locator("body.INDpositionLeft.INDDesktop.INDChrome.INDlangdirRTL.INDnoTooltip:nth-child(2) mat-sidenav-container.mat-drawer-container.mat-sidenav-container.sidenav-container mat-sidenav-content.mat-drawer-content.mat-sidenav-content:nth-child(5) app-internal-company-header.ng-star-inserted header.ng-star-inserted div.header.city-selected div.header-wrapper div.buttons.desktop.ng-star-inserted app-button:nth-child(1) > button.btn.desktop.type-e")
         self.login_input = page.locator("//input[@data-placeholder='מספר נייד']")
         self.otp_input = page.locator("//input[@data-placeholder='הזן כאן את הקוד']")
         self.submit_login_btn = page.locator("//button[contains(text(),'שלח')]")
@@ -16,7 +16,6 @@ class AuthorityPage(BasePage):
         self.standing_order_icon_btn.click()
 
     def user_login_to_mast_with_asset(self,phone):
-        self.page.wait_for_selector("//button[contains(text(),'התחברות')]", state="visible", timeout=10000)
         self.login_btn.click()
         self.page.fill("//input[@data-placeholder='מספר נייד']", phone)
         self.submit_login_btn.click()
