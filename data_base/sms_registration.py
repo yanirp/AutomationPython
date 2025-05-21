@@ -5,8 +5,8 @@ import os
 class SmsRegistration:
     @staticmethod
     def get_last_sms_by_phone(phone):
-        # אם זה CI עם מספר טלפון ידוע - החזר קוד קבוע
         if os.getenv("CI") == "true" and phone == os.getenv("CI_TEST_PHONE"):
+            print("Using fixed password for CI")
             return os.getenv("CI_TEST_PASSWORD")
 
         if platform.system() == "Windows":

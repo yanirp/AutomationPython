@@ -21,5 +21,6 @@ class AuthorityPage(BasePage):
         self.submit_login_btn.click()
         time.sleep(5)
         otp = SmsRegistration.get_last_sms_by_phone(phone)
+        assert otp, "OTP was None – failed to get password from DB or CI"
         self.page.fill("//input[@data-placeholder='הזן כאן את הקוד']" ,str(otp))
         self.submit_login_btn.click()
