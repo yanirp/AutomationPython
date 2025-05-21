@@ -16,6 +16,7 @@ class AuthorityPage(BasePage):
         self.standing_order_icon_btn.click()
 
     def user_login_to_mast_with_asset(self,phone):
+        self.page.wait_for_selector("//button[contains(text(),'התחברות')]", state="visible", timeout=10000)
         self.login_btn.click()
         self.page.fill("//input[@data-placeholder='מספר נייד']", phone)
         self.submit_login_btn.click()
