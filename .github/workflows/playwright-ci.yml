@@ -47,5 +47,5 @@ jobs:
           CI_TEST_PHONE: ${{ secrets.CI_TEST_PHONE }}
           CI_TEST_PASSWORD: ${{ secrets.CI_TEST_PASSWORD }}
         run: |
-          xvfb-run pytest tests/test_authority_page.py --headed --slowmo 100
+          xvfb-run pytest tests/test_authority_page.py --slowmo 100
      
